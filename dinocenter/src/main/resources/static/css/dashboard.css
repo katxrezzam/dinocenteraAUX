@@ -1,0 +1,13 @@
+.maintain{
+    border-left-color: #5E9026;
+    border-left-width: 10px;
+}
+.btn-maintain{
+    background: #5E9026;
+}
+
+.btn-maintain .bxs-cog{
+    color: white;
+    font-size: 20px;
+    padding-top: 5px;
+}

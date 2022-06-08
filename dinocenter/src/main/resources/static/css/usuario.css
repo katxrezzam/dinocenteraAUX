@@ -1,0 +1,36 @@
+.table.usuario thead{
+    background: #5E9026;
+    color: #fff;
+}
+.table.usuario tbody{
+    font-weight: 400;
+}
+.table.usuario tbody.tr{
+    transition: all 0.5s ease;
+}
+.table.usuario tbody tr:hover{
+    background: #5B4116;
+    color: white;
+}
+.table.usuario tbody .id{
+    text-align: center;
+}
+.table.usuario thead .id{
+    text-align: center;
+}
+.pagination.usuario .page-item .page-link{
+    background: #5E9026;
+    color: white;
+    border-color: white;
+}
+.btn-action{
+    text-align: center;
+}
+.search-bar{
+    display: flex;
+    flex-flow: wrap;
+}
+
+.pagination.usuario .page-item.active .page-link{
+    background: #5B4116;
+}

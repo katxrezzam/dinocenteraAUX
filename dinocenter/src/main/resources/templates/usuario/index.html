@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="layout/fragment :: head"></head>
+<body id="page-top">
+<!-- Page Wrapper -->
+    <div id="wrapper">
+        <!-- Sidebar -->
+        <div th:replace="layout/fragment :: dinobar"></div>
+        <!-- End of Sidebar -->
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+            <!-- Main Content -->
+            <div id="content">
+                <!-- Topbar -->
+                <div th:replace="layout/fragment :: dinotopbar"></div>
+                <!-- End of Topbar -->
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+                    <div class="title-content">
+                        <h1>Usuarios</h1>
+                    </div>
+                    <div class="card shadow mb-4">
+                        <div class="card-body">
+                            <div class="table-responsive-md">
+                                <div class="row mb-3">
+                                    <div class="col-sm-12 col-md-6">
+                                        <form action="">
+                                            <div class="row mr-1">
+                                                <div class="col-4">
+                                                    <input class="form-control" placeholder="Ingrese id"/>
+                                                </div>
+                                                <div class="col-1">
+                                                    <button class="btn btn-primary">
+                                                        <i class='bx bx-search' ></i>
+                                                    </button>
+                                                </div>
+                                                <div class="col-1">
+                                                    <a class="btn btn-primary eBtn">
+                                                        <i class='bx bx-plus' ></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="col-sm-12 col-md-6">
+                                        <div class="export d-flex justify-content-end">
+                                            <a class="btn btn-danger" href="">
+                                                Exportar
+                                                <i class='bx bx-download' ></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <table class="table usuario table-bordered table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>ID</th>
+                                                    <th>Nombre</th>
+                                                    <th>Celular</th>
+                                                    <th>Email</th>
+                                                    <th colspan="2"></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr th:each="usuario: ${list}">
+                                                    <td th:text="${usuario.id}"></td>
+                                                    <td th:text="${usuario.nombre}"></td>
+                                                    <td th:text="${usuario.celular}"></td>
+                                                    <td th:text="${usuario.email}"></td>
+                                                    <td class="btn-action">
+                                                        <a class="btn btn-primary eBtn" th:href="@{/usuario/buscar/(id=${usuario.id})}">
+                                                            <i class='bx bxs-cog' ></i>
+                                                        </a>
+                                                    </td>
+                                                    <td class="btn-action">
+                                                        <a class="btn btn-danger" href="">
+                                                            <i class='bx bxs-trash' ></i>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <nav aria-label="Page navigation example">
+                                            <ul class="pagination usuario justify-content-end">
+                                                <li class="page-item" th:classappend="${ prev == 0 ? 'disabled': ''}">
+                                                    <a class="page-link" th:href="@{|/usuario/index/?page=${prev}|}" aria-label="Previous">
+                                                        <i class='bx bxs-left-arrow'></i>
+                                                    </a>
+                                                </li>
+                                                <li class="page-item"  th:each="page : ${pages}" th:classappend="${current == page ? 'active' : ''}">
+                                                    <a class="page-link" th:href="@{|/usuario/index/?page=${page}|}" th:text="${page}"></a>
+                                                </li>
+                                                <li class="page-item" th:classappend="${ current == last ? 'disabled': ''}">
+                                                    <a class="page-link" th:href="@{|/usuario/index/?page=${next}|}" aria-label="Next">
+                                                        <i class='bx bxs-right-arrow' ></i>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.container-fluid -->
+            </div>
+            <!-- End of Main Content -->
+        </div>
+        <!-- End of Content Wrapper -->
+    </div>
+    <!-- End of Page Wrapper -->
+<!-- GUARDAR MODAL-->
+    <div class="form-modal-guardar">
+        <form th:action="@{/usuario/guardar}" method="post">
+            <div class="modal fade" id="usuario-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Ingrese nuevo usuario</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                                <input type="hidden" id="id" name="id" value="">
+                                <div class="mb-3">
+                                    <label for="nombre" class="col-form-label">Nombre:</label>
+                                    <input type="text" class="form-control" id="nombre" name="nombre" value=""/>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="celular" class="col-form-label">Celular:</label>
+                                    <input type="text" class="form-control" id="celular" name="celular" value="">
+                                </div>
+                            <div class="mb-3">
+                                <label for="email" class="col-form-label">Email:</label>
+                                <input type="text" class="form-control" id="email" name="email" value="">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">enviar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <!-- Scroll to Top Button-->
+    <div th:replace="layout/fragment :: scrolltop"></div>
+    <!-- Logout Modal-->
+    <div th:replace="layout/fragment :: dinomodalLogout"></div>
+    <!-- Bootstrap core JavaScript-->
+    <div th:replace="layout/fragment :: scripts"></div>
+</body>
+</html>

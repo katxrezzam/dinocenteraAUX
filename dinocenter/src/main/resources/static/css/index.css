@@ -1,0 +1,16 @@
+.navbar-nav.side{
+    background: #5E9026;
+}
+.image-dino{
+    width: 75px;
+    height: 75px;
+}
+.navbar.top{
+    background: #3F2B0B;
+}
+.navbar.top #sidebarToggleTop i{
+    color: #fff;
+}
+.navbar.top #sidebarToggleTop:hover{
+    background: #AFD08A;
+}

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="layout/fragment :: head"></head>
+<body id="page-top">
+    <div id="wrapper">
+        <div th:replace="layout/fragment :: dinobar"></div>
+        <div id="content-wrapper" class="d-flex flex-column">
+            <div id="content">
+                <div th:replace="layout/fragment :: dinotopbar"></div>
+                <div class="container-fluid">
+                    <div class="title-content">
+                        <h1>Mantemiento</h1>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <!-- Earnings (Monthly) Card Example -->
+                                <div class="col-xl-3 col-md-6 mb-4">
+                                    <div class="card shadow h-100 py-2 maintain">
+                                        <div class="card-body">
+                                            <div class="row no-gutters align-items-center">
+                                                <div class="col-2">
+                                                    <i class='bx bxs-user bx-md'></i>
+                                                </div>
+                                                <div class="col mr-2">
+                                                    <div class="text-xs font-weight-bold text-uppercase mb-1">
+                                                        Usuarios
+                                                    </div>
+                                                    <div class="h5 mb-0 font-weight-bold text-gray-800" th:text="${usuarios}"></div>
+                                                </div>
+                                                <div class="col-auto ml-4">
+                                                    <a class="btn btn-maintain" th:href="@{/usuario/index}">
+                                                        <i class='bx bxs-cog'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Earnings (Annual) Card Example -->
+                                <div class="col-xl-3 col-md-6 mb-4">
+                                    <div class="card shadow h-100 py-2 maintain">
+                                        <div class="card-body">
+                                            <div class="row no-gutters align-items-center">
+                                                <div class="col-2">
+                                                    <i class='bx bxs-box bx-md'></i>
+                                                </div>
+                                                <div class="col mr-2">
+                                                    <div class="text-xs font-weight-bold text-uppercase mb-1">
+                                                        Productos
+                                                    </div>
+                                                    <div class="h5 mb-0 font-weight-bold text-gray-800">0</div>
+                                                </div>
+                                                <div class="col-auto ml-4">
+                                                    <a class="btn btn-maintain" href="">
+                                                        <i class='bx bxs-cog'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Tasks Card Example -->
+                                <div class="col-xl-3 col-md-6 mb-4">
+                                    <div class="card shadow h-100 py-2 maintain">
+                                        <div class="card-body">
+                                            <div class="row no-gutters align-items-center">
+                                                <div class="col-2">
+                                                    <i class='bx bxs-package bx-md' ></i>
+                                                </div>
+                                                <div class="col mr-2">
+                                                    <div class="text-xs font-weight-bold text-uppercase mb-1">
+                                                        Ordenes
+                                                    </div>
+                                                    <div class="h5 mb-0 font-weight-bold text-gray-800">0</div>
+                                                </div>
+                                                <div class="col-auto ml-4">
+                                                    <a class="btn btn-maintain" href="">
+                                                        <i class='bx bxs-cog'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Pending Requests Card Example -->
+                                <div class="col-xl-3 col-md-6 mb-4">
+                                    <div class="card shadow h-100 py-2 maintain">
+                                        <div class="card-body">
+                                            <div class="row no-gutters align-items-center">
+                                                <div class="col-2">
+                                                    <i class='bx bxs-category bx-md' ></i>
+                                                </div>
+                                                <div class="col mr-2">
+                                                    <div class="text-xs font-weight-bold text-uppercase mb-1">
+                                                        Categorias
+                                                    </div>
+                                                    <div class="h5 mb-0 font-weight-bold text-gray-800">0</div>
+                                                </div>
+                                                <div class="col-auto ml-4">
+                                                    <a class="btn btn-maintain" href="">
+                                                        <i class='bx bxs-cog'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End of row -->
+                            <div class="row">
+                                <div class="col-xl-3 col-md-6 mb-4">
+                                    <div class="card shadow h-100 py-2 maintain">
+                                        <div class="card-body">
+                                            <div class="row no-gutters align-items-center">
+                                                <div class="col-2">
+                                                    <i class='bx bxs-truck bx-md' ></i>
+                                                </div>
+                                                <div class="col mr-2">
+                                                    <div class="text-xs font-weight-bold text-uppercase mb-1">
+                                                        Distribuidores
+                                                    </div>
+                                                    <div class="h5 mb-0 font-weight-bold text-gray-800">0</div>
+                                                </div>
+                                                <div class="col-auto ml-4">
+                                                    <a class="btn btn-maintain" href="">
+                                                        <i class='bx bxs-cog'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Earnings (Annual) Card Example -->
+                                <div class="col-xl-3 col-md-6 mb-4">
+                                    <div class="card shadow h-100 py-2 maintain">
+                                        <div class="card-body">
+                                            <div class="row no-gutters align-items-center">
+                                                <div class="col-2">
+                                                    <i class='bx bx-notepad bx-md'></i>
+                                                </div>
+                                                <div class="col mr-2">
+                                                    <div class="text-xs font-weight-bold text-uppercase mb-1">
+                                                        Almacenes
+                                                    </div>
+                                                    <div class="h5 mb-0 font-weight-bold text-gray-800">0</div>
+                                                </div>
+                                                <div class="col-auto ml-4">
+                                                    <a class="btn btn-maintain" href="">
+                                                        <i class='bx bxs-cog'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Tasks Card Example -->
+                                <div class="col-xl-3 col-md-6 mb-4">
+                                    <div class="card shadow h-100 py-2 maintain">
+                                        <div class="card-body">
+                                            <div class="row no-gutters align-items-center">
+                                                <div class="col-2">
+                                                    <i class='bx bxs-store bx-md'></i>
+                                                </div>
+                                                <div class="col mr-2">
+                                                    <div class="text-xs font-weight-bold text-uppercase mb-1">
+                                                        Tiendas
+                                                    </div>
+                                                    <div class="h5 mb-0 font-weight-bold text-gray-800">0</div>
+                                                </div>
+                                                <div class="col-auto ml-4">
+                                                    <a class="btn btn-maintain" href="">
+                                                        <i class='bx bxs-cog'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Pending Requests Card Example -->
+                                <div class="col-xl-3 col-md-6 mb-4">
+                                    <div class="card shadow h-100 py-2 maintain">
+                                        <div class="card-body">
+                                            <div class="row no-gutters align-items-center">
+                                                <div class="col-2">
+                                                    <i class='bx bxs-briefcase-alt-2 bx-md' ></i>
+                                                </div>
+                                                <div class="col mr-2">
+                                                    <div class="text-xs font-weight-bold text-uppercase mb-1">
+                                                        Trabajadores
+                                                    </div>
+                                                    <div class="h5 mb-0 font-weight-bold text-gray-800">0</div>
+                                                </div>
+                                                <div class="col-auto ml-4">
+                                                    <a class="btn btn-maintain" href="">
+                                                        <i class='bx bxs-cog'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div th:replace="layout/fragment :: scrolltop"></div>
+    <div th:replace="layout/fragment :: dinomodalLogout"></div>
+    <div th:replace="layout/fragment :: scripts"></div>
+</body>
+</html>
